@@ -5,6 +5,7 @@ This repository contains a modified third-party software. Flickr image-scraping 
 # Requirements
 
 - Python 3.8.3
+- pip package manager
 - virtualenv package for python
 
 # Instructions
@@ -30,8 +31,10 @@ git clone https://github.com/fanismahmalat/mga410_communicating_systems .
 ### 4. Activate virtual environment
 
 ```bash
-Script\activate.bat
+Scripts\activate.bat
 ```
+
+Note: The above command is used on Windows systems
 
 ### 5. Install dependencies
 
