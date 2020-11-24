@@ -12,6 +12,9 @@ secret = "4f6486ee2d6d0acb"
 
 SAVE_FOLDER = "images"
 
+temp_word = ''
+iterations = 1
+
 
 def main():
     if not os.path.exists(SAVE_FOLDER):
@@ -25,10 +28,15 @@ def findImage(n=1):
     license = ()  # https://www.flickr.com/services/api/explore/?method=flickr.photos.licenses.getInfo
 
     # search = "morning"
-    search = input("What are you looking for? ")
-    while not len(search) > 0:
-        print("Please provide a query")
+    if(iterations == 1):
         search = input("What are you looking for? ")
+        while not len(search) > 0:
+            print("Please provide a query")
+            search = input("What are you looking for? ")
+    else:
+        search = temp_word
+
+    print("search word: " + search)
 
     photos = flickr.walk(
         text=search,  # http://www.flickr.com/services/api/flickr.photos.search.html
@@ -66,9 +74,26 @@ def findImage(n=1):
 
 
 def saveImage(url, search):
-    urllib.request.urlretrieve(url, "images/" + search + ".jpg")
-    urllib.request.urlretrieve(url, "temp_image/image.jpg")
+    # urllib.request.urlretrieve(url, "images/" + search + ".jpg")
+    path = os.path.abspath(os.path.dirname(os.path.abspath(__file__))) + "\\temp_image\\image.jpg"
+    print(os.path.dirname(os.path.abspath(__file__)) + "\\temp_image\\image.jpg")
+    print(url)
+    urllib.request.urlretrieve(url, path)
     startexe.executeProcessingSystem()
+    readWord()
+
+def readWord():
+    path = os.path.abspath(os.path.dirname(os.path.abspath(__file__))) + "\\singleWord.txt"
+    with open(path) as f:
+        contents = f.read()
+        global temp_word
+        temp_word = contents.strip()
+        print("new temp word: " + contents)
+    
+    global iterations
+    iterations = iterations + 1
+    time.sleep(2)
+    findImage()
 
 
 if __name__ == "__main__":
