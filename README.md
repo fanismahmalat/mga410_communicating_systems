@@ -49,7 +49,7 @@ Note: Use with activated virtual environment
 ### 1. Run python script
 
 ```python
-python flickr_scraper.py
+python communicate.py
 ```
 
 ### 2. Input any the search term in the terminal

@@ -1,6 +1,14 @@
-# pip install -U -r requirements.txt
-
-flickrapi
-numpy
-pillow
-tqdm
+certifi==2020.11.8
+chardet==3.0.4
+flickrapi==2.4.0
+idna==2.10
+keyboard==0.13.5
+numpy==1.19.4
+oauthlib==3.1.0
+Pillow==8.0.1
+requests==2.24.0
+requests-oauthlib==1.3.0
+requests-toolbelt==0.9.1
+six==1.15.0
+tqdm==4.51.0
+urllib3==1.25.11
