@@ -10,25 +10,19 @@ This repository contains a modified third-party software. Flickr image-scraping 
 
 # Instructions
 
-### 1. Create virtual environment
+### 1. Clone repository
 
 ```bash
-virtualenv <name>
+git clone https://github.com/fanismahmalat/mga410_communicating_systems
 ```
 
 ### 2. Navigate into the folder of virtual environment
 
 ```bash
-cd <name>
+cd mga410_communicating_systems
 ```
 
-### 3. Clone repository
-
-```bash
-git clone https://github.com/fanismahmalat/mga410_communicating_systems .
-```
-
-### 4. Activate virtual environment
+### 3. Activate virtual environment
 
 ```bash
 Scripts\activate.bat
@@ -36,7 +30,7 @@ Scripts\activate.bat
 
 Note: The above command is used on Windows systems
 
-### 5. Install dependencies
+### 4. Install dependencies
 
 ```bash
 pip install -U -r requirements.txt
@@ -46,12 +40,18 @@ pip install -U -r requirements.txt
 
 Note: Use with activated virtual environment
 
-### 1. Run python script
+### 1. Navigate into src folder
+
+```bash
+cd src
+```
+
+### 2. Run python script
 
 ```python
 python communicate.py
 ```
 
-### 2. Input any the search term in the terminal
+3. Input any the search term in the terminal
 
-### 3. You should see the downloaded image in the folder /src/temp_image/**image.jpg** and the word output in /src/processing-system/executable/**singleWord.txt**
+4. You should see the downloaded image in the folder /src/temp_image/**image.jpg** and the word output in /src/processing-system/executable/**singleWord.txt**
